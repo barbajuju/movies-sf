@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Movies !{% endblock %}
+
+{% block body %}
+
+    <h1>Accueil !</h1>
+
+
+    {% for movie in movies %}
+        <div>
+            <a href="{{ path('movie_detail', {'id': movie.id}) }}">
+                <img  class="poster" src="{{ asset('img/posters/' ~ movie.image) }}">
+                <p>Movie added on {{ movie.dateCreated|date("Y-m-d") }}</p>
+            </a>
+        </div>
+    {% endfor %}
+
+
+{% endblock %}

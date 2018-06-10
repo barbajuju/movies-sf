@@ -1,0 +1,32 @@
+{# cette variable vient du contrôleur #}
+ID du film : {{ id }}
+
+
+
+
+   {{ path('movie_detail', {'id': 522}) }}
+
+
+
+
+    {% if id > 500 %}
+        l'id est plus grand que 500
+    {% else %}
+        l'id est plus petit ou égal à 500
+    {% endif %}
+
+    {# creer une variable tableau #}
+    {% set colors = ['blue', 'red', 'yellow'] %}
+
+    {# boucle #}
+    {%  for color in colors %}
+        {{ color }}
+    {% endfor %}
+
+    {# boucle avec filtre #}
+    {%  for color in colors %}
+        {{ color|upper}}
+    {% endfor %}
+
+    {# longueur d'un tableau#}
+    {{ colors|length }} couleurs

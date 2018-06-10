@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {# commentaires : cette variable vient du contrôleur #}
+    Details du film {{ id }}
+
+
+
+{% endblock %}
+
+{% block body %}
+    <h1>Detail !</h1>
+    <p>pif pouf</p>
+
+    {# conditions #}
+    {%  if id > 500 %}
+        l'id est plus grand que 500<br>
+    {% else %}
+        l'id est plus petit ou égal à 500<br>
+    {% endif %}
+
+    {# crée une variable #}
+    {% set colors = ['blue', 'yellow', 'red'] %}
+
+    {# longueur d'un tableau ou d'une chaîne #}
+    {{ colors | length }} couleurs<br>
+
+    {# boucle #}
+    {% for color in colors %}
+        {{ color | upper }}
+    {% endfor %}
+
+    <div>
+        <h1>{{ movie.title }}</h1>
+        <img src="{{ asset('img/posters/' ~ movie.image) }}">
+        <div>{{ movie.year }}</div>
+        <p>{{ movie.plot }}</p>
+
+        <a href="{{ path('review_create', {'id': movie.id}) }}">Leave a review !</a>
+        <div>
+            <h2>Last reviews</h2>
+            {% for review in reviews %}
+                <div>
+                    <p>Posted by {{ review.username }} on {{ review.dateCreated|date("Y-m-d") }}</p>
+                    <div>{{ review.content }}</div>
+                </div>
+            {% else %}
+                <div>No review yet !</div>
+            {% endfor %}
+        </div>
+
+
+    </div>
+
+{% endblock %}
+

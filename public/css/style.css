@@ -1,0 +1,33 @@
+body {
+    background-color: green;
+    color: #FFF;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.poster {
+    width: 200px;
+    height: 300px;
+    display: block;
+    /*float: left; on va preferer faire flex dans le main cf ci-dessus*/
+    overflow: hidden;
+}
+
+.poster img {
+    width: 100%;
+}
+
+.row{
+    display : flex;
+}
+
+.flash-success{
+    padding: 20px;
+    background-color: deeppink;
+    font-weight: bold;
+    text-align: center;
+}

@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+{# templates/review/create.html.twig #}
+
+{% block body %}
+    <h1>Leave your review!</h1>
+    <div>
+    {{ form(form, {'attr': {'novalidate': 'novalidate' }}) }}
+    </div>
+{% endblock %}
